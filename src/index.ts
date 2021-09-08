@@ -52,8 +52,8 @@ app.use(function errorHandler(
 
 try {
   const swaggerDocument = require('../swagger.json');
-  app.use('/docs', SwaggerUI.serve);
-  app.get('/docs', SwaggerUI.setup(swaggerDocument));
+  app.use('/checklist/docs', SwaggerUI.serve);
+  app.get('/checklist/docs', SwaggerUI.setup(swaggerDocument));
   } catch (error) {
     console.log('unable to read swagger json');
   throw error;
@@ -64,5 +64,5 @@ app.use('*', (req: express.Request, res: express.Response) => {
 })
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log('service running on port: ' + process.env.PORT);
+  console.log('service running on port: ' + (process.env.PORT ? process.env.PORT : 3000));
 });

@@ -7,7 +7,7 @@
     "specVersion": 3
   },
   "routes": {
-    "basePath": "/api",
+    "basePath": "/checklist",
     "routesDir": "./src/application/controllers"
   }
 }
